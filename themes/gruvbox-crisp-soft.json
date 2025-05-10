@@ -1,0 +1,86 @@
+{
+  "$schema": "vscode://schemas/color-theme",
+  "name": "Gruvbox Crisp (Soft, with TeX)",
+  "type": "dark",
+  "semanticHighlighting": true,
+  "include": "./gruvbox-crisp-high-contrast.json",
+  "colors": {
+    "editor.background": "#32302f",
+    "sideBar.background": "#32302f",
+    "activityBar.background": "#32302f",
+    "statusBar.background": "#32302f",
+    "titleBar.activeBackground": "#32302f",
+    "titleBar.inactiveBackground": "#32302f",
+    "tab.inactiveBackground": "#32302f",
+    "editorGroupHeader.tabsBackground": "#32302f",
+    "editorGroupHeader.noTabsBackground": "#32302f",
+    "terminal.background": "#32302f",
+    "panel.background": "#32302f",
+    "widget.shadow": "#32302f30",
+    "editor.foreground": "#ebdbb2",
+    "terminal.foreground": "#ebdbb2",
+    "editorGutter.background": "#32302f",
+    "editor.lineHighlightBackground": "#3c3836",
+    "editor.selectionBackground": "#504945",
+    "editorCursor.foreground": "#fe8019",
+    "editorLineNumber.foreground": "#928374",
+    "editorLineNumber.activeForeground": "#fe8019"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "keyword",
+        "storage.type",
+        "storage.modifier"
+      ],
+      "settings": {
+        "foreground": "#fb4934"
+      }
+    },
+    {
+      "scope": [
+        "string",
+        "string.quoted"
+      ],
+      "settings": {
+        "foreground": "#b8bb26"
+      }
+    },
+    {
+      "scope": [
+        "constant.numeric",
+        "constant.language",
+        "constant.character",
+        "constant.other"
+      ],
+      "settings": {
+        "foreground": "#d3869b"
+      }
+    },
+    {
+      "scope": [
+        "variable",
+        "variable.parameter"
+      ],
+      "settings": {
+        "foreground": "#ebdbb2"
+      }
+    },
+    {
+      "scope": ["comment"],
+      "settings": {
+        "foreground": "#928374",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function",
+        "support.function"
+      ],
+      "settings": {
+        "foreground": "#8ec07c"
+      }
+    }
+  ]
+}
