@@ -71,6 +71,12 @@ Enhanced syntax highlighting for:
 - Shell scripts
 - And many more...
 
+## Recent Updates
+
+### Version 0.1.1
+- Fixed issue with text disappearing in popup hover menucards when selected
+- Improved visibility of selected elements with proper text contrast
+
 ## Contributing
 
 Feel free to open issues or submit pull requests on GitHub.
