@@ -13,6 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Bump version
-        uses: zed-industries/bump-zed-extension@v1
+        uses: huacnlee/zed-extension-action@v1.0.0
         with:
           path: extension.toml
