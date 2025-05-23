@@ -80,7 +80,7 @@ Enhanced syntax highlighting for:
 
 ## Recent Updates
 
-### Version 0.1.1
+### Version 0.1.2
 - Fixed issue with text disappearing in popup hover menucards when selected
 - Improved visibility of selected elements with proper text contrast
 
