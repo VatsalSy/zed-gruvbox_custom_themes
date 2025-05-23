@@ -1,19 +1,19 @@
-name: Bump Zed Extension
+name: Release Zed Extension
 
 on:
   push:
-    branches:
-      - main
-      - master
-  workflow_dispatch:
+    tags:
+      - 'v*'
 
 jobs:
-  bump:
+  release:
+    name: Release Zed Extension
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Bump version
-        uses: huacnlee/zed-extension-action@v1.0.0
+      - uses: huacnlee/zed-extension-action@v1.0.0
         with:
-          path: extension.toml
+          extension-name: gruvbox-crisp-themes
+          push-to: VatsalSy/extensions
+        env:
+          # the personal access token should have "repo" & "workflow" scopes
+          COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
