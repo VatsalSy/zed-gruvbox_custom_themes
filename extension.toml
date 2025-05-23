@@ -1,7 +1,12 @@
 id = "gruvbox-crisp-themes"
 name = "Gruvbox Crisp Themes"
-version = "0.1.3"
+version = "0.1.4"
 schema_version = 1
 authors = ["Vatsal Sanjay <vatsalsanjay@gmail.com>"]
 description = "Custom Gruvbox themes for Zed Editor with crisp high contrast variants"
 repository = "https://github.com/VatsalSy/zed-gruvbox_custom_themes"
+icon = "icon.png"
+
+[contributes]
+themes = ["themes/gruvbox-crisp-high-contrast.json"]
+

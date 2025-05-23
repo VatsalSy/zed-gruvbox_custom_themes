@@ -31,6 +31,13 @@ This theme collection is based on the excellent [Gruvbox Theme by jdinhify](http
 4. Click "Install Dev Extension"
 5. Select the cloned repository directory
 
+### Continuous Integration
+
+This repository includes a GitHub workflow (located at `.github/workflows/bump-extension.yml`)
+using the `bump-zed-extension` action. The workflow automatically bumps the
+version in `extension.toml` when changes are pushed to the `main`
+branch, ensuring the package stays up to date for publishing on
+[zed.dev](https://zed.dev).
 ## Theme Variants
 
 This collection includes multiple variants of the Gruvbox Dark theme:
