@@ -1,6 +1,6 @@
 id = "gruvbox-crisp-themes"
 name = "Gruvbox Crisp Themes"
-version = "0.1.4"
+version = "0.1.2"
 schema_version = 1
 authors = ["Vatsal Sanjay <vatsalsanjay@gmail.com>"]
 description = "Custom Gruvbox themes for Zed Editor with crisp high contrast variants"
