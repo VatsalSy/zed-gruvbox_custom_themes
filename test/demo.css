@@ -1,0 +1,454 @@
+/**
+ * CSS Demo - Gruvbox Crisp Theme
+ * Demonstrates various CSS syntax highlighting features
+ */
+
+/* Import statements */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'reset.css' screen;
+@import url("theme.css") supports(display: grid);
+
+/* CSS Variables / Custom Properties */
+:root {
+    /* Color palette */
+    --color-bg-dark: #1d2021;
+    --color-bg-medium: #282828;
+    --color-bg-soft: #32302f;
+    --color-fg: #ebdbb2;
+    --color-red: #fb4934;
+    --color-green: #b8bb26;
+    --color-yellow: #fabd2f;
+    --color-blue: #83a598;
+    --color-purple: #d3869b;
+    --color-aqua: #8ec07c;
+    --color-orange: #fe8019;
+    
+    /* Spacing scale */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    
+    /* Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Fira Code', 'Consolas', monospace;
+    
+    /* Animations */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 250ms ease-in-out;
+    --transition-slow: 400ms ease-in-out;
+}
+
+/* Dark theme override */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: var(--color-bg-dark);
+        --color-text: var(--color-fg);
+    }
+}
+
+/* Attribute selectors */
+[data-theme="dark"] {
+    background-color: var(--color-bg-dark);
+    color: var(--color-fg);
+}
+
+input[type="text"],
+input[type="email"],
+input[type^="date"] {
+    border: 1px solid var(--color-blue);
+}
+
+a[href$=".pdf"]::after {
+    content: " (PDF)";
+    color: var(--color-orange);
+}
+
+[class*="btn-"][class$="-primary"] {
+    background: var(--color-purple);
+}
+
+/* Pseudo-classes and pseudo-elements */
+.navbar a:hover,
+.navbar a:focus {
+    color: var(--color-yellow);
+    text-decoration: underline;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+li:first-child {
+    margin-top: 0;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+li:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+li:nth-of-type(3n + 1) {
+    font-weight: bold;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+    border-color: var(--color-red);
+}
+
+/* Modern pseudo-classes */
+.container:has(> .hero) {
+    padding-top: 0;
+}
+
+.form-group:focus-within {
+    background-color: rgba(131, 165, 152, 0.1);
+}
+
+input:is(:hover, :focus) {
+    border-color: var(--color-aqua);
+}
+
+section:where(.features, .testimonials) {
+    padding: var(--space-xl) 0;
+}
+
+/* Pseudo-elements */
+.hero-title::before {
+    content: "★ ";
+    color: var(--color-yellow);
+}
+
+.quote::after {
+    content: close-quote;
+}
+
+::selection {
+    background-color: var(--color-purple);
+    color: white;
+}
+
+.code-block::first-line {
+    font-weight: bold;
+}
+
+/* Complex selectors */
+.nav-menu > li > a {
+    padding: var(--space-sm) var(--space-md);
+}
+
+.sidebar + main {
+    margin-left: 250px;
+}
+
+h2 ~ p {
+    margin-top: var(--space-sm);
+}
+
+/* Class and ID selectors */
+#main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.btn.btn-primary {
+    background-color: var(--color-blue);
+    color: white;
+    border: none;
+}
+
+/* Nested media queries and container queries */
+@media screen and (min-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-lg);
+    }
+    
+    @media (hover: hover) {
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+@container (min-width: 400px) {
+    .card {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+/* Animations and keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn var(--transition-slow) ease-out forwards;
+}
+
+.btn:hover {
+    animation: pulse 2s infinite;
+}
+
+/* Transitions */
+.card {
+    transition: 
+        transform var(--transition-fast),
+        box-shadow var(--transition-normal),
+        background-color var(--transition-slow);
+}
+
+/* Transforms and filters */
+.logo {
+    transform: rotate(-5deg) scale(1.1);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.image-grayscale {
+    filter: grayscale(100%) contrast(1.2);
+    transition: filter var(--transition-normal);
+}
+
+.image-grayscale:hover {
+    filter: grayscale(0%) contrast(1);
+}
+
+/* Grid layout */
+.dashboard {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar main aside"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.aside { grid-area: aside; }
+.footer { grid-area: footer; }
+
+/* Flexbox */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.flex-item {
+    flex: 1 1 300px;
+}
+
+/* CSS Functions */
+.responsive-text {
+    font-size: clamp(1rem, 2vw + 1rem, 3rem);
+    width: min(100%, 1200px);
+    height: max(300px, 50vh);
+}
+
+.gradient-bg {
+    background: linear-gradient(
+        135deg,
+        hsl(30, 90%, 55%),
+        hsl(45, 95%, 63%)
+    );
+}
+
+.custom-cursor {
+    cursor: url('cursor.png') 4 4, auto;
+}
+
+/* Calc and CSS math */
+.sidebar {
+    width: calc(100% / 3 - var(--space-lg));
+    padding: calc(var(--space-md) * 2);
+}
+
+/* Modern CSS features */
+.masonry {
+    columns: 3;
+    column-gap: var(--space-lg);
+}
+
+.text-balance {
+    text-wrap: balance;
+}
+
+/* Scroll snap */
+.carousel {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.carousel-item {
+    scroll-snap-align: center;
+}
+
+/* Aspect ratio */
+.video-wrapper {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
+/* Logical properties */
+.card {
+    margin-block: var(--space-lg);
+    padding-inline: var(--space-md);
+    border-start-start-radius: 8px;
+    border-end-end-radius: 8px;
+}
+
+/* CSS Nesting (Native) */
+.navigation {
+    background: var(--color-bg-medium);
+    
+    & ul {
+        list-style: none;
+        display: flex;
+        
+        & li {
+            margin: 0;
+            
+            & a {
+                display: block;
+                padding: var(--space-sm) var(--space-md);
+                
+                &:hover,
+                &:focus {
+                    background: var(--color-bg-dark);
+                    color: var(--color-yellow);
+                }
+            }
+        }
+    }
+}
+
+/* @layer for cascade layers */
+@layer reset, base, components, utilities;
+
+@layer reset {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+
+@layer base {
+    body {
+        font-family: var(--font-sans);
+        line-height: 1.6;
+    }
+}
+
+@layer components {
+    .btn {
+        padding: var(--space-sm) var(--space-md);
+        border-radius: 4px;
+        font-weight: 500;
+    }
+}
+
+@layer utilities {
+    .mt-4 { margin-top: var(--space-lg); }
+    .text-center { text-align: center; }
+}
+
+/* @supports queries */
+@supports (display: grid) {
+    .layout {
+        display: grid;
+    }
+}
+
+@supports not (aspect-ratio: 1) {
+    .square {
+        padding-bottom: 100%;
+    }
+}
+
+@supports selector(:has(*)) {
+    .parent:has(.child) {
+        padding: var(--space-lg);
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    @page {
+        margin: 2cm;
+        size: A4;
+    }
+    
+    @page :first {
+        margin-top: 3cm;
+    }
+}
+
+/* Counter styles */
+.chapters {
+    counter-reset: chapter;
+}
+
+.chapter::before {
+    counter-increment: chapter;
+    content: "Chapter " counter(chapter) ": ";
+}
+
+/* Advanced selectors */
+:root:has(.dark-mode) {
+    --color-bg: var(--color-bg-dark);
+}
+
+/* CSS Containment */
+.widget {
+    contain: layout style;
+    container-type: inline-size;
+}
+
+/* Scroll timeline (experimental) */
+@supports (animation-timeline: scroll()) {
+    .parallax {
+        animation: parallax-effect linear;
+        animation-timeline: scroll();
+    }
+}
+
+/* Color functions */
+.dynamic-color {
+    background-color: rgb(from var(--color-purple) r g b / 0.5);
+    color: color-mix(in srgb, var(--color-yellow) 30%, white);
+}

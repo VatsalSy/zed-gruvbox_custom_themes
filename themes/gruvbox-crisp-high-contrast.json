@@ -428,6 +428,66 @@
             "background_color": "#88C0D010",
             "font_style": "normal",
             "font_weight": 600
+          },
+          "markup.heading": {
+            "color": "#EBCB8B",
+            "background_color": "#EBCB8B10",
+            "font_style": "normal",
+            "font_weight": 700
+          },
+          "markup.math": {
+            "color": "#E394DC",
+            "background_color": "#E394DC08",
+            "font_style": "normal",
+            "font_weight": 500
+          },
+          "markup.math.delimiter": {
+            "color": "#8ec07c",
+            "background_color": "#8ec07c08",
+            "font_style": "normal",
+            "font_weight": 600
+          },
+          "markup.raw": {
+            "color": "#A3BE8C",
+            "background_color": "#A3BE8C08",
+            "font_style": "normal",
+            "font_weight": 400
+          },
+          "markup.reference": {
+            "color": "#81A1C1",
+            "background_color": "#81A1C108",
+            "font_style": "normal",
+            "font_weight": 500
+          },
+          "markup.environment": {
+            "color": "#EBCB8B",
+            "background_color": "#EBCB8B08",
+            "font_style": "normal",
+            "font_weight": 600
+          },
+          "markup.command": {
+            "color": "#BF616A",
+            "background_color": "#BF616A08",
+            "font_style": "normal",
+            "font_weight": 600
+          },
+          "markup.command.argument": {
+            "color": "#A3BE8C",
+            "background_color": "#A3BE8C08",
+            "font_style": "normal",
+            "font_weight": 400
+          },
+          "markup.section": {
+            "color": "#EBCB8B",
+            "background_color": "#EBCB8B10",
+            "font_style": "normal",
+            "font_weight": 700
+          },
+          "markup.citation": {
+            "color": "#81A1C1",
+            "background_color": "#81A1C108",
+            "font_style": "normal",
+            "font_weight": 500
           }
         }
       }
@@ -857,6 +917,66 @@
             "background_color": "#2e7c8a10",
             "font_style": "normal",
             "font_weight": 600
+          },
+          "markup.heading": {
+            "color": "#d79921",
+            "background_color": "#d7992110",
+            "font_style": "normal",
+            "font_weight": 700
+          },
+          "markup.math": {
+            "color": "#9C36B6",
+            "background_color": "#9C36B608",
+            "font_style": "normal",
+            "font_weight": 500
+          },
+          "markup.math.delimiter": {
+            "color": "#3c6e38",
+            "background_color": "#3c6e3808",
+            "font_style": "normal",
+            "font_weight": 600
+          },
+          "markup.raw": {
+            "color": "#588157",
+            "background_color": "#58815708",
+            "font_style": "normal",
+            "font_weight": 400
+          },
+          "markup.reference": {
+            "color": "#2e7c8a",
+            "background_color": "#2e7c8a08",
+            "font_style": "normal",
+            "font_weight": 500
+          },
+          "markup.environment": {
+            "color": "#d79921",
+            "background_color": "#d7992108",
+            "font_style": "normal",
+            "font_weight": 600
+          },
+          "markup.command": {
+            "color": "#9d4f36",
+            "background_color": "#9d4f3608",
+            "font_style": "normal",
+            "font_weight": 600
+          },
+          "markup.command.argument": {
+            "color": "#588157",
+            "background_color": "#58815708",
+            "font_style": "normal",
+            "font_weight": 400
+          },
+          "markup.section": {
+            "color": "#d79921",
+            "background_color": "#d7992110",
+            "font_style": "normal",
+            "font_weight": 700
+          },
+          "markup.citation": {
+            "color": "#2e7c8a",
+            "background_color": "#2e7c8a08",
+            "font_style": "normal",
+            "font_weight": 500
           }
         }
       }

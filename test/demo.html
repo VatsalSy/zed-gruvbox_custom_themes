@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gruvbox Crisp Theme Demo - HTML Syntax Highlighting">
+    <title>HTML Demo - Gruvbox Crisp Theme</title>
+    
+    <!-- External resources -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Inline styles for demo -->
+    <style>
+        /* CSS will be in separate file for better highlighting */
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header class="site-header" role="banner">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="/" class="logo" aria-label="Home">
+                <img src="/assets/logo.svg" alt="Company Logo" width="40" height="40">
+            </a>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="#features" role="menuitem">Features</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+            <button 
+                class="menu-toggle" 
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
+                <span class="hamburger"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content" class="container">
+        <article class="hero-section">
+            <h1 class="hero-title">Welcome to <span class="brand">Gruvbox Crisp</span></h1>
+            <p class="hero-description">
+                Experience beautiful syntax highlighting with our carefully crafted theme.
+                <br>
+                <strong>High contrast</strong>, <em>clear visibility</em>, and 
+                <mark>optimal readability</mark> for your code.
+            </p>
+            
+            <!-- Call to action -->
+            <div class="cta-group">
+                <a href="#download" class="btn btn-primary" data-action="download">
+                    Download Theme
+                </a>
+                <a href="#preview" class="btn btn-secondary" data-action="preview">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 5v14m7-7H5" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    Live Preview
+                </a>
+            </div>
+        </article>
+
+        <!-- Features section -->
+        <section id="features" class="features" aria-labelledby="features-heading">
+            <h2 id="features-heading">Key Features</h2>
+            
+            <div class="feature-grid">
+                <!-- Feature card with custom elements -->
+                <custom-feature-card 
+                    icon="palette" 
+                    title="Beautiful Colors"
+                    data-feature-id="colors"
+                >
+                    <template slot="description">
+                        Carefully selected color palette based on the 
+                        <abbr title="Retro groove color scheme">Gruvbox</abbr> theme.
+                    </template>
+                </custom-feature-card>
+                
+                <!-- Table example -->
+                <div class="comparison-table">
+                    <table>
+                        <caption>Theme Comparison</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Feature</th>
+                                <th scope="col">Gruvbox Crisp</th>
+                                <th scope="col">Standard</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Contrast Ratio</th>
+                                <td><data value="21">21:1</data></td>
+                                <td><data value="7">7:1</data></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Language Support</th>
+                                <td>50+</td>
+                                <td>25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form section -->
+        <section class="contact-section">
+            <h2>Get In Touch</h2>
+            
+            <form action="/api/contact" method="POST" class="contact-form" novalidate>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="name">
+                            Full Name
+                            <span class="required" aria-label="required">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required
+                            pattern="[A-Za-z\s]+"
+                            placeholder="John Doe"
+                            autocomplete="name"
+                        >
+                        <small class="error-message" role="alert"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email"
+                            placeholder="john@example.com"
+                            autocomplete="email"
+                        >
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+                    
+                    <div class="checkbox-group" role="group" aria-labelledby="theme-prefs">
+                        <span id="theme-prefs">Select theme variants:</span>
+                        <label>
+                            <input type="checkbox" name="themes" value="dark" checked>
+                            Dark Theme
+                        </label>
+                        <label>
+                            <input type="checkbox" name="themes" value="light">
+                            Light Theme
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="editor">Preferred Editor</label>
+                        <select id="editor" name="editor">
+                            <optgroup label="Popular">
+                                <option value="vscode" selected>VS Code</option>
+                                <option value="zed">Zed</option>
+                                <option value="sublime">Sublime Text</option>
+                            </optgroup>
+                            <optgroup label="Terminal">
+                                <option value="vim">Vim</option>
+                                <option value="emacs">Emacs</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Tell us what you think..."
+                    ></textarea>
+                    <output for="message" class="char-count">0/500</output>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Send Message
+                </button>
+            </form>
+        </section>
+
+        <!-- Media elements -->
+        <section class="media-section">
+            <figure>
+                <picture>
+                    <source srcset="theme-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">
+                    <source srcset="theme-light.webp" type="image/webp" media="(prefers-color-scheme: light)">
+                    <img src="theme-default.jpg" alt="Theme preview" loading="lazy">
+                </picture>
+                <figcaption>Gruvbox Crisp theme in action</figcaption>
+            </figure>
+
+            <video controls poster="video-poster.jpg" preload="metadata">
+                <source src="demo.mp4" type="video/mp4">
+                <source src="demo.webm" type="video/webm">
+                <track kind="captions" src="captions.vtt" srclang="en" label="English">
+                Your browser doesn't support video playback.
+            </video>
+        </section>
+
+        <!-- Details/Summary -->
+        <details class="faq-item">
+            <summary>What makes Gruvbox Crisp different?</summary>
+            <p>
+                Unlike standard Gruvbox themes, Gruvbox Crisp uses the highest contrast
+                backgrounds and ensures all foreground colors are crisp and clear,
+                eliminating any haziness or reduced visibility.
+            </p>
+        </details>
+
+        <!-- Code examples -->
+        <div class="code-demo">
+            <pre><code class="language-html">&lt;!-- HTML entities and special characters --&gt;
+&lt;p&gt;Copyright &amp;copy; 2024 &lt;strong&gt;Gruvbox&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Price: &amp;euro;99 &amp;ndash; &amp;euro;199&lt;/p&gt;
+&lt;p&gt;&amp;quot;Quality&amp;quot; &amp;gt; &amp;lt;Quantity&amp;gt;&lt;/p&gt;</code></pre>
+        </div>
+
+        <!-- Inline elements showcase -->
+        <section class="inline-elements">
+            <p>
+                Here's some <code>inline code</code>, a <kbd>Ctrl</kbd> + <kbd>C</kbd> 
+                keyboard shortcut, some <var>variable</var> text, and <samp>sample output</samp>.
+            </p>
+            <p>
+                Mathematical expressions: E = mc<sup>2</sup> and H<sub>2</sub>O.
+            </p>
+            <p>
+                <del>Deleted text</del> and <ins>inserted text</ins> for tracking changes.
+            </p>
+            <p>
+                <dfn>HTML</dfn> stands for HyperText Markup Language.
+            </p>
+            <blockquote cite="https://example.com">
+                <p>The best themes are the ones that enhance readability.</p>
+                <footer>— <cite>Anonymous Developer</cite></footer>
+            </blockquote>
+        </section>
+
+        <!-- Lists -->
+        <div class="list-examples">
+            <dl>
+                <dt>Gruvbox Dark</dt>
+                <dd>A warm, retro-groove color scheme with dark background</dd>
+                
+                <dt>High Contrast</dt>
+                <dd>Maximum contrast ratio for optimal visibility</dd>
+            </dl>
+            
+            <ol type="I">
+                <li>Install the extension</li>
+                <li>Select the theme
+                    <ol type="a">
+                        <li>Open settings</li>
+                        <li>Choose color theme</li>
+                    </ol>
+                </li>
+                <li>Enjoy coding!</li>
+            </ol>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <address>
+            Contact us at 
+            <a href="mailto:support@gruvbox.theme">support@gruvbox.theme</a>
+            <br>
+            <a href="tel:+1234567890">(123) 456-7890</a>
+        </address>
+        
+        <time datetime="2024-01-15">Last updated: January 15, 2024</time>
+        
+        <p>
+            <small>&copy; 2024 Gruvbox Crisp Theme. All rights reserved.</small>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module">
+        // Modern JavaScript
+        import { initTheme } from './theme.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+        });
+    </script>
+    
+    <script nomodule>
+        // Fallback for older browsers
+        console.log('Please upgrade your browser for the best experience');
+    </script>
+    
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Gruvbox Crisp Theme",
+        "applicationCategory": "DeveloperApplication"
+    }
+    </script>
+</body>
+</html>

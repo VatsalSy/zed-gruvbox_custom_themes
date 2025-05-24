@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/gruvbox-theme-config.schema.json",
+  "title": "Gruvbox Crisp Theme Configuration",
+  "description": "Configuration file for Gruvbox Crisp theme demonstrating JSON syntax highlighting",
+  "type": "object",
+  "required": ["name", "version", "themes"],
+  
+  "properties": {
+    "name": {
+      "type": "string",
+      "const": "gruvbox-crisp-themes"
+    },
+    
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "examples": ["1.0.0", "2.1.3"]
+    },
+    
+    "author": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    
+    "themes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/theme"
+      }
+    },
+    
+    "colorPalette": {
+      "type": "object",
+      "properties": {
+        "dark": {
+          "$ref": "#/definitions/colors"
+        },
+        "light": {
+          "$ref": "#/definitions/colors"
+        }
+      }
+    },
+    
+    "features": {
+      "type": "object",
+      "properties": {
+        "highContrast": {
+          "type": "boolean",
+          "default": true
+        },
+        "italicComments": {
+          "type": "boolean",
+          "default": true
+        },
+        "boldKeywords": {
+          "type": "boolean",
+          "default": true
+        },
+        "semanticHighlighting": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    
+    "supportedLanguages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "javascript",
+          "typescript",
+          "python",
+          "rust",
+          "go",
+          "html",
+          "css",
+          "json",
+          "markdown",
+          "latex",
+          "shell"
+        ]
+      },
+      "uniqueItems": true
+    },
+    
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "downloads": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rating": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "multipleOf": 0.1
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          }
+        }
+      }
+    },
+    
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "workbench": {
+          "type": "object",
+          "properties": {
+            "colorTheme": {
+              "type": "string"
+            },
+            "iconTheme": {
+              "type": ["string", "null"]
+            },
+            "fontFamily": {
+              "type": "string",
+              "default": "monospace"
+            },
+            "fontSize": {
+              "type": "integer",
+              "minimum": 8,
+              "maximum": 72,
+              "default": 14
+            }
+          }
+        },
+        
+        "editor": {
+          "type": "object",
+          "properties": {
+            "cursorStyle": {
+              "type": "string",
+              "enum": ["block", "line", "underline"],
+              "default": "line"
+            },
+            "lineNumbers": {
+              "type": "string",
+              "enum": ["on", "off", "relative"],
+              "default": "on"
+            },
+            "minimap": {
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "default": true
+                },
+                "maxColumn": {
+                  "type": "integer",
+                  "default": 120
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    
+    "experimental": {
+      "type": "object",
+      "properties": {
+        "newFeature": {
+          "type": "boolean",
+          "description": "Enable experimental new feature",
+          "default": false
+        },
+        "betaAPI": {
+          "type": ["object", "null"],
+          "properties": {
+            "enabled": false,
+            "apiKey": {
+              "type": "string",
+              "writeOnly": true
+            }
+          }
+        }
+      }
+    }
+  },
+  
+  "definitions": {
+    "theme": {
+      "type": "object",
+      "required": ["name", "type", "colors"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["dark", "light"]
+        },
+        "colors": {
+          "$ref": "#/definitions/themeColors"
+        }
+      }
+    },
+    
+    "colors": {
+      "type": "object",
+      "patternProperties": {
+        "^(bg|fg|color)\\..+$": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$"
+        }
+      },
+      "additionalProperties": false
+    },
+    
+    "themeColors": {
+      "type": "object",
+      "properties": {
+        "background": { "$ref": "#/definitions/hexColor" },
+        "foreground": { "$ref": "#/definitions/hexColor" },
+        "selection": { "$ref": "#/definitions/hexColor" },
+        "comment": { "$ref": "#/definitions/hexColor" },
+        "string": { "$ref": "#/definitions/hexColor" },
+        "keyword": { "$ref": "#/definitions/hexColor" },
+        "function": { "$ref": "#/definitions/hexColor" },
+        "variable": { "$ref": "#/definitions/hexColor" },
+        "number": { "$ref": "#/definitions/hexColor" },
+        "boolean": { "$ref": "#/definitions/hexColor" },
+        "null": { "$ref": "#/definitions/hexColor" },
+        "operator": { "$ref": "#/definitions/hexColor" },
+        "type": { "$ref": "#/definitions/hexColor" },
+        "error": { "$ref": "#/definitions/hexColor" },
+        "warning": { "$ref": "#/definitions/hexColor" },
+        "info": { "$ref": "#/definitions/hexColor" }
+      }
+    },
+    
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
+    }
+  },
+  
+  "examples": [
+    {
+      "name": "gruvbox-crisp-themes",
+      "version": "1.0.0",
+      "author": {
+        "name": "Vatsal Sanjay",
+        "email": "vatsal@example.com"
+      },
+      "themes": [
+        {
+          "name": "Gruvbox Crisp Dark",
+          "type": "dark",
+          "colors": {
+            "background": "#1d2021",
+            "foreground": "#ebdbb2",
+            "selection": "#504945",
+            "comment": "#928374",
+            "string": "#b8bb26",
+            "keyword": "#fb4934",
+            "function": "#b8bb26",
+            "variable": "#83a598",
+            "number": "#d3869b",
+            "boolean": "#d3869b",
+            "null": "#d3869b",
+            "operator": "#8ec07c",
+            "type": "#fabd2f",
+            "error": "#fb4934",
+            "warning": "#fabd2f",
+            "info": "#83a598"
+          }
+        }
+      ],
+      "features": {
+        "highContrast": true,
+        "italicComments": true,
+        "boldKeywords": true,
+        "semanticHighlighting": false
+      },
+      "supportedLanguages": [
+        "javascript",
+        "typescript",
+        "python",
+        "rust",
+        "go",
+        "html",
+        "css",
+        "json",
+        "markdown",
+        "latex",
+        "shell"
+      ],
+      "metadata": {
+        "created": "2024-01-15T10:30:00Z",
+        "updated": "2024-01-20T15:45:00Z",
+        "downloads": 15420,
+        "rating": 4.8,
+        "tags": ["gruvbox", "dark-theme", "high-contrast", "retro"]
+      },
+      "configuration": {
+        "workbench": {
+          "colorTheme": "Gruvbox Crisp Dark",
+          "iconTheme": null,
+          "fontFamily": "'Fira Code', 'Consolas', monospace",
+          "fontSize": 14
+        },
+        "editor": {
+          "cursorStyle": "line",
+          "lineNumbers": "on",
+          "minimap": {
+            "enabled": true,
+            "maxColumn": 120
+          }
+        }
+      },
+      "experimental": {
+        "newFeature": false,
+        "betaAPI": null
+      }
+    }
+  ]
+}

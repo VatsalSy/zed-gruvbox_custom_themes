@@ -75,6 +75,7 @@ Enhanced syntax highlighting for:
 - HTML/CSS
 - JSON
 - Markdown
+- LaTeX
 - Shell scripts
 - And many more...
 
