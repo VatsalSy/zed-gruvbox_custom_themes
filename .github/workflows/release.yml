@@ -26,7 +26,7 @@ jobs:
           # outside the upstream fork network (network_count 0), so no
           # cross-repository pull request could be opened from it.
           push-to: comphy-lab/extensions
-          tag: ${{ inputs.tag }}
+          tag-name: ${{ inputs.tag }}
         env:
           # Classic PAT with repo + workflow scopes. The previous one expired
           # around 2026-02-15 and failed two releases with a bare 401.
