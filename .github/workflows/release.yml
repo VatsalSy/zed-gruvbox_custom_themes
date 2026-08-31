@@ -4,6 +4,14 @@ on:
   push:
     tags:
       - 'v*'
+  # Lets a failed or superseded release be retried against an explicit tag,
+  # without deleting and re-pushing the tag to re-fire the push trigger.
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to publish (defaults to the pushed tag)'
+        required: false
+        type: string
 
 jobs:
   release:
@@ -13,7 +21,13 @@ jobs:
       - uses: huacnlee/zed-extension-action@v1.0.0
         with:
           extension-name: comphy-crisp-themes
-          push-to: VatsalSy/extensions
+          # comphy-lab/extensions is a real fork of zed-industries/extensions.
+          # The previous target, VatsalSy/extensions, is a standalone repository
+          # outside the upstream fork network (network_count 0), so no
+          # cross-repository pull request could be opened from it.
+          push-to: comphy-lab/extensions
+          tag: ${{ inputs.tag }}
         env:
-          # the personal access token should have "repo" & "workflow" scopes
+          # Classic PAT with repo + workflow scopes. The previous one expired
+          # around 2026-02-15 and failed two releases with a bare 401.
           COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
