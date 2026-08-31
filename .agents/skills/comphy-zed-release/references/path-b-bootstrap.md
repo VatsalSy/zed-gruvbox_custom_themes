@@ -15,7 +15,7 @@ Add `comphy-crisp-themes` as a new package entry without touching `gruvbox-crisp
    - `git fetch upstream`
    - `git checkout -b add-comphy-crisp-themes upstream/main`
 2. Add the new submodule path.
-   - `git submodule add https://github.com/VatsalSy/comphy-zed-themes.git extensions/comphy-crisp-themes`
+   - `git submodule add https://github.com/comphy-lab/comphy-zed-themes.git extensions/comphy-crisp-themes`
 3. Add a new `extensions.toml` section.
    - Add:
    - `[comphy-crisp-themes]`

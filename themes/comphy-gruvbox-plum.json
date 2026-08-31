@@ -269,6 +269,11 @@
             "font_style": "normal",
             "font_weight": 700
           },
+          "keyword.directive": {
+            "color": "#fe8019",
+            "font_style": "normal",
+            "font_weight": 700
+          },
           "label": {
             "color": "#fe8019",
             "font_style": "normal",
@@ -390,7 +395,7 @@
             "font_weight": 500
           },
           "variable": {
-            "color": "#83a598",
+            "color": "#e2dcd0",
             "font_style": "normal",
             "font_weight": 400
           },

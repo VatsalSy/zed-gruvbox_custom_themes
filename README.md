@@ -28,7 +28,7 @@ This extension ships four themes:
 
 ### Manual Installation
 
-1. Clone the repository: `git clone https://github.com/VatsalSy/comphy-zed-themes.git`
+1. Clone the repository: `git clone https://github.com/comphy-lab/comphy-zed-themes.git`
 2. Open Zed
 3. Open the Extensions panel
 4. Click `Install Dev Extension`

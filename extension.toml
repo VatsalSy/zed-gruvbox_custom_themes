@@ -3,8 +3,8 @@ name = "CoMPhy Crisp Themes"
 version = "1.1.0"
 schema_version = 1
 authors = ["Vatsal Sanjay <vatsalsanjay@gmail.com>"]
-description = "CoMPhy Crisp Velvet themes — jewel-toned syntax on deep plum-tinted dark backgrounds"
-repository = "https://github.com/VatsalSy/comphy-zed-themes"
+description = "CoMPhy Lab editor themes: Crisp Velvet (jewel-toned syntax on plum-tinted dark) and Gruvbox Plum, matching the lab VS Code, Neovim and Obsidian themes"
+repository = "https://github.com/comphy-lab/comphy-zed-themes"
 icon = "icon.png"
 
 [contributes]

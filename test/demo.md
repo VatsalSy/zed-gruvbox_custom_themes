@@ -423,6 +423,6 @@ Use backslash \\ to escape special characters.
 
 The **CoMPhy Crisp** theme provides excellent highlighting for all Markdown elements, making your documents both *beautiful* and ***highly readable***.
 
-For more information, visit the [CoMPhy Crisp repository](https://github.com/VatsalSy/comphy-zed-themes).
+For more information, visit the [CoMPhy Crisp repository](https://github.com/comphy-lab/comphy-zed-themes).
 
 Happy writing! :pencil:

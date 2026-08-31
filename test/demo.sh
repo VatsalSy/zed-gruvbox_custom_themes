@@ -181,7 +181,7 @@ install_theme() {
     mkdir -p "${theme_dir}"
     
     # Download theme files
-    local repo_url="https://github.com/VatsalSy/comphy-zed-themes"
+    local repo_url="https://github.com/comphy-lab/comphy-zed-themes"
     if command -v git >/dev/null 2>&1; then
         git clone --depth 1 "${repo_url}" "${theme_dir}" || die "Failed to clone repository"
     else
