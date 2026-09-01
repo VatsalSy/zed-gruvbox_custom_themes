@@ -27,6 +27,17 @@ jobs:
           # cross-repository pull request could be opened from it.
           push-to: comphy-lab/extensions
           tag-name: ${{ inputs.tag }}
+          # The action's default template starts "{{extensionName}} {{version}}",
+          # which upstream's danger check flags as not sentence case. Match the
+          # convention the registry actually uses: "Update <name> to v<version>".
+          commit-message: |
+            Update {{extensionName}} to v{{version}}
+
+            Release notes:
+
+            https://github.com/{{owner}}/{{repo}}/releases/tag/v{{version}}
+
+            > Created by [zed-extension-action](https://github.com/huacnlee/zed-extension-action).
         env:
           # Classic PAT with repo + workflow scopes. The previous one expired
           # around 2026-02-15 and failed two releases with a bare 401.
